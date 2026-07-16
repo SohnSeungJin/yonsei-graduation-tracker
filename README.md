@@ -29,3 +29,74 @@ https://yonsei-biz-stat-graduation-tracker.vercel.app
 - 남은 필수요건 자동 표시
 - 브라우저(Local Storage) 자동 저장
 
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+
+### Deployment
+
+- GitHub
+- Vercel
+
+- ---
+
+## 🚀 Getting Started
+
+### Install
+---
+
+## 📂 Project Structure
+
+```
+src
+├── components
+├── data
+├── utils
+├── App.tsx
+├── main.tsx
+└── ...
+```
+---
+
+## ⚠️ Notice
+
+- 본 서비스는 연세대학교 학생들의 편의를 위한 비공식 서비스입니다.
+- 최종 졸업 가능 여부는 반드시 연세대학교 공식 졸업사정 결과를 확인하시기 바랍니다.
+- 현재는 **경영학과(본전공) + 응용통계학과(캠퍼스내 복수전공)** 기준만 지원합니다.
+- ---
+
+## 👨‍💻 Developer
+
+**손승진**
+
+- Yonsei University
+- Business Administration
+- Applied Statistics (Double Major)
+
+GitHub
+
+https://github.com/SohnSeungJin
+
+```bash
+npm install
+```
+
+### Run
+
+```bash
+npm run dev
+```
+
+### Build
+
+```bash
+npm run build
+```
