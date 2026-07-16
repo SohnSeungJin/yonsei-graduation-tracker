@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap");
+
+:root {
+  font-family: "Noto Sans KR", Pretendard, "Apple SD Gothic Neo", sans-serif;
+  color: #162033;
+  background: #f4f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --yonsei-blue: #003876;
+  --yonsei-blue-2: #0b4f91;
+  --ink: #162033;
+  --muted: #6d788b;
+  --line: #e3e8f0;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: #f4f7fb; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+#root { min-height: 100vh; }
