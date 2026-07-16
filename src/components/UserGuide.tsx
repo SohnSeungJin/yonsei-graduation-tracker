@@ -40,7 +40,7 @@ function UserGuide() {
           <h2 id="guide-title">이용 전 유의사항</h2>
           <p>정확한 계산을 위해 아래 내용을 먼저 확인해 주세요.</p>
         </div>
-        <span className="guide-badge">Version 3.0</span>
+        <span className="guide-badge">Version 3.1</span>
       </div>
 
       <div className="guide-grid">

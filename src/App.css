@@ -164,7 +164,7 @@
 @media (max-width: 900px) { .manual-course-row { grid-template-columns: 28px 1fr 1fr; } .course-name-field { grid-column: 2 / 4; } .course-upper-field, .remove-course-button { margin-top: 0; } }
 @media (max-width: 600px) { .course-entry-heading { align-items: stretch; } .add-course-button { width: 100%; margin-top: 12px; } .manual-course-row { grid-template-columns: 28px 1fr 34px; } .course-name-field, .course-category-field, .course-credit-field { grid-column: 2 / 3; } .course-upper-field { grid-column: 2 / 3; } .remove-course-button { grid-column: 3; grid-row: 1; } }
 
-/* Version 3.0: guidance, cross recognition and visual status */
+/* Version 3.1: guidance, cross recognition and visual status */
 .guide-panel { margin-bottom: 18px; }
 .guide-heading { align-items: flex-start; }
 .guide-badge { flex: 0 0 auto; padding: 7px 11px; border-radius: 999px; color: #174f82; background: #eaf3fb; font-size: 10px; font-weight: 900; }

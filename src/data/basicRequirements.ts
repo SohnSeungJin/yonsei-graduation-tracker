@@ -134,14 +134,6 @@ function createSharedSections(
       credits: 1,
       mandatory: true,
     },
-    {
-      id: "rc-self-directed-activity",
-      title: "RC 자기주도활동",
-      description: "RC 자기주도활동을 이수했습니다.",
-      group: "rc",
-      credits: 1,
-      mandatory: true,
-    },
   ];
 
   return [
@@ -179,8 +171,8 @@ function createSharedSections(
       id: "rc",
       title: "RC 필수",
       description: includeSocialParticipation
-        ? "사회참여, Yonsei RC101, RC 자기주도활동을 모두 이수해야 합니다."
-        : "Yonsei RC101과 RC 자기주도활동을 모두 이수해야 합니다.",
+        ? "사회참여와 Yonsei RC101을 모두 이수해야 합니다."
+        : "Yonsei RC101을 이수해야 합니다.",
       requirements: rc,
     },
   ];

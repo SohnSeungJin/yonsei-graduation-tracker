@@ -594,7 +594,7 @@ function App() {
         </div>
 
         <footer className="notice">
-          <strong>Yonsei Graduation Tracker · Version 3.0</strong>
+          <strong>Yonsei Graduation Tracker · Version 3.1</strong>
           <span>본 서비스의 계산 결과는 참고용입니다. 최종 졸업요건은 연세포탈 졸업사정과 소속 학과를 통해 반드시 확인해 주세요.</span>
         </footer>
       </main>
