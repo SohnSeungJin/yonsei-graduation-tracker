@@ -1,24 +1,23 @@
 # 🎓 Yonsei Graduation Tracker
-
-연세대학교 **경영학과(본전공) + 응용통계학과(캠퍼스내 복수전공)** 학생을 위한 졸업요건 확인 서비스입니다.
----
-
-<img width="1555" height="906" alt="image" src="https://github.com/user-attachments/assets/81da9321-dcc1-4e50-a88e-9bcd07ab8f26" />
-
-
 🌐 **배포 사이트**
 
 👉 https://yonsei-biz-stat-graduation-tracker.vercel.app
 
+연세대학교 **경영학과(본전공) + 응용통계학과(캠퍼스내 복수전공)** 학생을 위한 졸업요건 확인 서비스입니다.
+---
+
+<img width="1082" height="638" alt="image" src="https://github.com/user-attachments/assets/710e24c6-63b7-4fc2-ac2d-27eb7c60f3d0" />
+
+
+✨ 학번별 졸업요건 자동 계산
+📊 졸업 가능 여부 실시간 확인
+🔄 교차인정 자동 반영
+💾 자동 저장(Local Storage)
+
 ## 📌 프로젝트 소개
 
-연세포탈에서는
-교차인정 과목과
-졸업요건을
-직관적으로 확인하기 어렵습니다.
-
-이를 해결하기 위해
-본 서비스를 개발했습니다.
+연세포탈에서는 졸업요건과 교차인정 여부를 한눈에 확인하기 어렵고, 학생들은 여러 기준을 직접 계산해야 합니다. 
+이 프로젝트는 이러한 불편을 줄이기 위해 개발되었습니다.
 
 ---
 
