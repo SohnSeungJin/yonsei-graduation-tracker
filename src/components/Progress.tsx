@@ -5,6 +5,10 @@ interface ProgressProps {
   generalElectiveRequirement: number;
   businessCredits: number;
   statisticsCredits: number;
+  businessCreditTarget: number;
+  statisticsCreditTarget: number;
+  showBusiness: boolean;
+  showStatistics: boolean;
 }
 
 interface ProgressItemProps {
@@ -51,8 +55,12 @@ function Progress(props: ProgressProps) {
         <ProgressItem label="총 이수학점" current={props.totalCredits} total={126} />
         <ProgressItem label="3·4000단위" current={props.upperLevelCredits} total={45} />
         <ProgressItem label="일반선택" current={props.generalElectiveCredits} total={props.generalElectiveRequirement} />
-        <ProgressItem label="경영학" current={props.businessCredits} total={48} />
-        <ProgressItem label="응용통계학" current={props.statisticsCredits} total={36} />
+        {props.showBusiness && (
+          <ProgressItem label="경영학" current={props.businessCredits} total={props.businessCreditTarget} />
+        )}
+        {props.showStatistics && (
+          <ProgressItem label="응용통계학" current={props.statisticsCredits} total={props.statisticsCreditTarget} />
+        )}
       </div>
       <div className="progress-legend" aria-label="진행률 색상 안내">
         <span><i className="legend-low" />0~49%</span>

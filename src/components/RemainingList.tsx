@@ -10,6 +10,8 @@ interface RemainingListProps {
   generalElectiveRemaining: number;
   businessCourses: RequiredCourse[];
   statisticsCourses: RequiredCourse[];
+  showBusiness: boolean;
+  showStatistics: boolean;
 }
 
 const sectionOrder = ["교기", "기초교육", "필수교양", "대학교양", "RC 필수"];
@@ -83,8 +85,8 @@ function CourseGroup({ title, courses }: { title: string; courses: RequiredCours
   );
 }
 
-function RemainingList({ basicRequirements, generalElectiveRemaining, businessCourses, statisticsCourses }: RemainingListProps) {
-  const totalRemaining = basicRequirements.length + (generalElectiveRemaining > 0 ? 1 : 0) + businessCourses.length + statisticsCourses.length;
+function RemainingList({ basicRequirements, generalElectiveRemaining, businessCourses, statisticsCourses, showBusiness, showStatistics }: RemainingListProps) {
+  const totalRemaining = basicRequirements.length + (generalElectiveRemaining > 0 ? 1 : 0) + (showBusiness ? businessCourses.length : 0) + (showStatistics ? statisticsCourses.length : 0);
 
   return (
     <div>
@@ -110,8 +112,12 @@ function RemainingList({ basicRequirements, generalElectiveRemaining, businessCo
             <p className="remaining-complete">✓ 일반선택 학점 충족</p>
           )}
         </div>
-        <CourseGroup title="경영학과" courses={businessCourses} />
-        <CourseGroup title="응용통계학과" courses={statisticsCourses} />
+        {showBusiness && (
+          <CourseGroup title="경영학과" courses={businessCourses} />
+        )}
+        {showStatistics && (
+          <CourseGroup title="응용통계학과" courses={statisticsCourses} />
+        )}
       </div>
     </div>
   );

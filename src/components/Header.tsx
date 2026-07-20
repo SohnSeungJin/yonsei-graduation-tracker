@@ -10,7 +10,7 @@ function Header({ onReset }: HeaderProps) {
           <span className="brand-mark">Y</span>
           <span>
             <strong>Yonsei Graduation Tracker</strong>
-            <small>Business × Applied Statistics</small>
+            <small>Business · Applied Statistics</small>
           </span>
         </a>
 

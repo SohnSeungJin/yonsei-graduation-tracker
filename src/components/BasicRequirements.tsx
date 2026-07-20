@@ -20,7 +20,7 @@ function BasicRequirements({
     <div>
       <div className="required-list-header basic-requirements-header">
         <div>
-          <span className="section-kicker">STEP 2</span>
+          <span className="section-kicker">STEP 3</span>
           <h2>{profile.label} 기본 졸업요건</h2>
           <p>교기, 기초교육, {profile.liberalArtsName}, RC 필수 요건을 확인해 주세요.</p>
         </div>

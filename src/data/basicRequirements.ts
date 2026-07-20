@@ -1,4 +1,5 @@
 export type AdmissionYear = 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026;
+export type PrimaryMajor = "business" | "statistics";
 
 export type RequirementGroup = "christian" | "foundation" | "liberalArts" | "rc";
 
@@ -75,6 +76,33 @@ const liberalArtsFrom2020: BasicRequirement[] = liberalArts2019.map((item) => ({
       ? "정보와기술 영역에서 1과목 이상 반드시 이수해야 합니다."
       : item.description,
 }));
+
+function applyPrimaryMajorRequirements(
+  liberalArts: BasicRequirement[],
+  primaryMajor: PrimaryMajor
+): BasicRequirement[] {
+  if (primaryMajor === "business") return liberalArts;
+
+  return liberalArts.map((requirement) => {
+    if (requirement.id === "region-world") {
+      return {
+        ...requirement,
+        mandatory: false,
+        description: `${requirement.title} 영역에서 1과목 이상 이수했습니다.`,
+      };
+    }
+
+    if (requirement.id === "logic-math") {
+      return {
+        ...requirement,
+        mandatory: true,
+        description: "STA1001 통계학입문을 반드시 이수해야 합니다.",
+      };
+    }
+
+    return requirement;
+  });
+}
 
 function createSharedSections(
   liberalArtsName: "필수교양" | "대학교양",
@@ -178,14 +206,24 @@ function createSharedSections(
   ];
 }
 
-function profileForYear(year: AdmissionYear): YearRequirementProfile {
+function profileForYear(
+  year: AdmissionYear,
+  primaryMajor: PrimaryMajor
+): YearRequirementProfile {
+  const majorLabel = primaryMajor === "business" ? "경영학" : "응용통계학";
+
   if (year === 2018) {
     return {
       admissionYear: year,
       label: "2018학번",
       liberalArtsName: "필수교양",
-      sections: createSharedSections("필수교양", liberalArts2018, true, true),
-      sourceNote: "2018학번 경영학 본전공 졸업기준",
+      sections: createSharedSections(
+        "필수교양",
+        applyPrimaryMajorRequirements(liberalArts2018, primaryMajor),
+        true,
+        true
+      ),
+      sourceNote: `2018학번 ${majorLabel} 본전공 졸업기준`,
     };
   }
 
@@ -194,8 +232,13 @@ function profileForYear(year: AdmissionYear): YearRequirementProfile {
       admissionYear: year,
       label: "2019학번",
       liberalArtsName: "대학교양",
-      sections: createSharedSections("대학교양", liberalArts2019, true, true),
-      sourceNote: "2019학번 경영학 본전공 졸업기준",
+      sections: createSharedSections(
+        "대학교양",
+        applyPrimaryMajorRequirements(liberalArts2019, primaryMajor),
+        true,
+        true
+      ),
+      sourceNote: `2019학번 ${majorLabel} 본전공 졸업기준`,
     };
   }
 
@@ -203,19 +246,32 @@ function profileForYear(year: AdmissionYear): YearRequirementProfile {
     admissionYear: year,
     label: `${year}학번`,
     liberalArtsName: "대학교양",
-    sections: createSharedSections("대학교양", liberalArtsFrom2020, false, false),
-    sourceNote: year >= 2023 ? "졸업기준표의 2023학번 이후 기준 적용" : `${year}학번 경영학 본전공 졸업기준`,
+    sections: createSharedSections(
+      "대학교양",
+      applyPrimaryMajorRequirements(liberalArtsFrom2020, primaryMajor),
+      false,
+      false
+    ),
+    sourceNote:
+      year >= 2023
+        ? `${majorLabel} 본전공 졸업기준표의 2023학번 이후 기준 적용`
+        : `${year}학번 ${majorLabel} 본전공 졸업기준`,
   };
 }
 
 export const admissionYears: AdmissionYear[] = [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
 
 export const yearRequirementProfiles = Object.fromEntries(
-  admissionYears.map((year) => [year, profileForYear(year)])
+  admissionYears.map((year) => [year, profileForYear(year, "business")])
 ) as Record<AdmissionYear, YearRequirementProfile>;
 
-export function getYearRequirementProfile(year: AdmissionYear): YearRequirementProfile {
-  return yearRequirementProfiles[year];
+export function getYearRequirementProfile(
+  year: AdmissionYear,
+  primaryMajor: PrimaryMajor = "business"
+): YearRequirementProfile {
+  return primaryMajor === "business"
+    ? yearRequirementProfiles[year]
+    : profileForYear(year, primaryMajor);
 }
 
 export function getAllRequirementIds(profile: YearRequirementProfile): string[] {
