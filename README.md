@@ -6,6 +6,10 @@
 
 > 계산 결과는 참고용입니다. 최종 졸업 가능 여부는 연세포탈 졸업사정과 소속 학과 안내를 기준으로 확인해야 합니다.
 
+<img width="1540" height="808" alt="image" src="https://github.com/user-attachments/assets/508a6c41-676c-4eb8-a92f-a5c1b78d71ae" />
+<img width="1547" height="791" alt="image" src="https://github.com/user-attachments/assets/7e9b2e4b-17a1-460f-848c-4cd5c7f2f37e" />
+
+
 ## 프로젝트 배경
 
 졸업요건은 입학 학번과 전공 유형에 따라 달라지고, 기본요건·전공필수·전공학점·교차인정 등을 함께 확인해야 합니다. 이 프로젝트는 흩어진 기준을 하나의 계산 규칙으로 구조화하고, 학생이 성적증명서를 직접 대조하는 과정을 줄이기 위해 만들었습니다.
@@ -53,29 +57,6 @@
 - 필수과목, 기본요건, 전공선택, 일반선택을 구분해 중복 학점 반영을 방지했습니다.
 - PDF 원본과 OCR 결과는 외부 서버로 전송하지 않고 사용자의 브라우저에서 처리합니다.
 
-## 기술 구성
-
-- React 19, TypeScript, Vite
-- PDF.js, Tesseract.js
-- Vitest, Oxlint
-- Vercel
-
-별도의 백엔드, 데이터베이스 또는 유료 OCR API를 사용하지 않습니다.
-
-## 로컬 실행
-
-```bash
-npm install
-npm run dev
-```
-
-검증 명령어는 다음과 같습니다.
-
-```bash
-npm run test
-npm run lint
-npm run build
-```
 
 ## 졸업요건 출처
 
